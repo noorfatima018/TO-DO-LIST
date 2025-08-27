@@ -1,0 +1,214 @@
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Container ===== */
+.container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 450px;
+}
+
+/* ===== Input Section ===== */
+.input-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-container h1 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#inputbox {
+  width: 65%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+#inputbox:focus {
+  border-color: #4caf50;
+}
+
+#addbtn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#addbtn:hover {
+  background-color: #43a047;
+}
+
+/* ===== To-Do List Styling ===== */
+.todolist {
+  list-style-type: none;
+}
+
+.todolist li {
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Task text */
+.todolist li p {
+  flex: 1;
+  margin-right: 10px;
+  word-break: break-word;
+}
+
+/* Buttons in each item */
+.todolist li button {
+  border: none;
+  padding: 6px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  color: #fff;
+}
+
+/* Edit Button – Blue */
+.todolist li button:nth-child(2) {
+  background-color: #42a5f5;
+}
+
+.todolist li button:nth-child(2):hover {
+  background-color: #1e88e5;
+}
+
+/* Remove Button – Red */
+.todolist li button:nth-child(3) {
+  background-color: #e53935;
+}
+
+.todolist li button:nth-child(3):hover {
+  background-color: #c62828;
+}
+
+/* Completed Task */
+.todolist li.completed p {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  }
+
+  .container {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+  }
+
+  .input-container h1 {
+    color: #f5f5f5;
+  }
+
+  #inputbox {
+    background-color: #2b2b2b;
+    color: #fff;
+    border: 2px solid #555;
+  }
+
+  .todolist li {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .todolist li.completed p {
+    color: #999;
+  }
+
+  #addbtn {
+    background-color: #81c784;
+  }
+
+  #addbtn:hover {
+    background-color: #66bb6a;
+  }
+
+  .todolist li button {
+    color: white;
+  }
+
+  .todolist li button:nth-child(2) {
+    background-color: #2196f3;
+  }
+
+  .todolist li button:nth-child(3) {
+    background-color: #e53935;
+  }
+}
+/* Wrap the button in a container div */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#clearall {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#clearall:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+#clearall:active {
+  background-color: #a71d2a;
+  transform: scale(0.97);
+}
